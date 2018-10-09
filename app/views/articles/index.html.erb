@@ -1,0 +1,19 @@
+<h1>Articles</h1>
+
+<br>
+<hr>
+<br>
+
+<%= link_to 'New article', new_article_path, class: 'btn btn-success' %>
+
+<br>
+<hr>
+<br>
+
+<% @articles.each do |article| %>
+  <div class="article-card">
+    <%= cl_image_tag article.photo, height: 300, width: 400, crop: :fill %>
+    <h2><%= article.title %></h2>
+    <p><%= article.content %></p>
+  </div>
+<% end %>
