@@ -1,0 +1,9 @@
+function updateArticle(articleHTML) {
+  const editArticleForm = document.querySelector('.edit_article');
+
+  const img = editArticleForm.querySelector('.photo img');
+
+  img.setAttribute('src','<%= @article.photo.metadata["url"] %>');
+}
+
+updateArticle('<%= j render "articles/form", article: @article %>');
